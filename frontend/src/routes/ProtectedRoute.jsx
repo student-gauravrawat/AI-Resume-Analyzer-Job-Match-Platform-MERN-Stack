@@ -1,0 +1,16 @@
+import {useSelector} from "react-redux"
+import {Form, Navigate, useLocation} from "react-router-dom"
+
+function ProtectedRoute({ children }){
+ const user = useSelector(state=> state.user.authUser);
+ const location = useLocation();
+
+ if(!user){
+    return <Navigate to="/login" replace state={{Form: location}}/>
+ }
+    return children;
+
+}
+
+export default ProtectedRoute;
+
