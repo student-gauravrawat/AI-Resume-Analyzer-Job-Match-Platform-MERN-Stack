@@ -135,7 +135,7 @@ src/
  ├── utils/
  ├── db/
  ├── app.js
- └── main.js
+ └── index.js
 ```
 
 ### Frontend
