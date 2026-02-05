@@ -200,7 +200,7 @@ npm run start
 
 ```bash
 npm install
-npm run satar
+npm run start
 ```
 
 ---
