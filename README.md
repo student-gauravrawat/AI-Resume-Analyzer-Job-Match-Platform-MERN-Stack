@@ -1,7 +1,7 @@
 # 🤖 AI Resume Analyzer & Job Match Platform (MERN Stack)
 
 A full‑stack **AI‑powered Resume Analyzer and Job Matching platform** built using the **MERN stack**, focused on **secure authentication, AI integration, and clean backend architecture**.
-This project is designed to demonstrate **real‑world full‑stack development practices** suitable for a **fresher‑level product company role**.
+This project is designed to demonstrate **real‑world full‑stack development practices** suitable for a **Deployment**.
 
 ---
 
