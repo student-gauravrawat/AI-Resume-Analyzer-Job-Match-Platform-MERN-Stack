@@ -1,37 +1,25 @@
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-const PDFParser = require("pdf2json");
+import fs from "fs";
+import pdf from "pdf-extraction"; 
 
-export const pdfParse = (filePath) => {
-  return new Promise((resolve, reject) => {
-    const pdfParser = new PDFParser();
+export const pdfParse = async (filePath) => {
+  try {
+      if (!fs.existsSync(filePath)) {
+        console.log("File not found at path:", filePath);
+        return "";
+     }
 
-    pdfParser.on("pdfParser_dataError", (err) => {
-      reject(err.parserError);
-    });
+     const dataBuffer = fs.readFileSync(filePath);
+     const data = await pdf(dataBuffer); 
 
-    pdfParser.on("pdfParser_dataReady", (pdfData) => {
-      let text = "";
+     if (!data || !data.text) {
+      console.log("No text found in PDF");
+      return "";
+     }
+    
+    return data.text; 
 
-      pdfData.Pages.forEach((page) => {
-        page.Texts.forEach((t) => {
-          t.R.forEach((r) => {
-           try {
-             text += decodeURIComponent(r.T) + " ";
-           } catch (error) {
-              text += r.T + " ";
-           }
-          });
-        });
-        text += "\n";
-      });
-
-      resolve(text);
-    });
-
-    pdfParser.loadPDF(filePath);
-  });
+  } catch (error) {
+    console.error("Parsing Error:", error);
+    return "";
+  }
 };
-
-
-

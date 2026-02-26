@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../../apis/auth";
 import {useDispatch, useSelector} from "react-redux"
@@ -65,7 +65,7 @@ function SideBar() {
         </nav>
       </div>)
      : (
-      <p>loading...</p>
+      <p className="text-gray-500 font-medium">loading...</p>
      )
      }
 

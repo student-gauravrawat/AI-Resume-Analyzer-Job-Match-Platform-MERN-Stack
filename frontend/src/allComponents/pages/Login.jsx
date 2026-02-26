@@ -30,7 +30,7 @@ function Login() {
 
       const response = await login(userdata)
       console.log(response)
-      dispatch(setAuthUser(response))
+      dispatch(setAuthUser(response.loggedUser))
       navigate("/")
 
     } catch (error) {

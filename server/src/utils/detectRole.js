@@ -10,7 +10,11 @@ export function detectRole(jdText) {
 
     for (const keyword of roles[role].keywords) {
       if (text.includes(keyword)) {
-        score++;
+        if (keyword.includes("full stack") || keyword.includes("fullstack") || keyword.includes("full-stack") || keyword.includes("web developer") || keyword.includes("web development")){
+          score += 3;
+        } else {
+          score += 1;
+        }
       }
     }
 
