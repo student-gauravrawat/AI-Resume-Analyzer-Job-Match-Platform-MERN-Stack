@@ -116,7 +116,7 @@ The main focus of this project is **secure authentication**, **AI‑based analys
 * Helmet
 * dotenv
 * @google/genai
-* pdf2json
+* pdf-extraction
 * mammoth
 * NLP Libraries
 
