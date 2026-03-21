@@ -29,7 +29,7 @@ function Login() {
       }
 
       const response = await login(userdata)
-      console.log(response)
+      // console.log(response)
       dispatch(setAuthUser(response.loggedUser))
       navigate("/")
 
