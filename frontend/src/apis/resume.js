@@ -13,7 +13,7 @@ export const uploadResume = async(file)=>{
     )
 
      toast.success(response?.data?.message)
-     console.log(response?.data)
+    //  console.log(response?.data)
      return response?.data
 
   } catch (error) {
