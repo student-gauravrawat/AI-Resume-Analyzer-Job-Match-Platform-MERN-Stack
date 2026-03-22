@@ -13,7 +13,7 @@ export const registerUser = async(userData)=>{
         }
       )
       toast.success(response?.data?.message)
-      return response.data;
+      return response?.data;
 
    } catch (error) {
     const msg =  error.response?.data?.error ||
@@ -35,7 +35,7 @@ export const emailVerify = async(data)=>{
       }
      )
      toast.success(response?.data?.message)
-     return response.data;
+     return response?.data;
    } catch (error) {
     const msg =  error.response?.data?.error ||
                  error.response?.data?.message ||
@@ -56,7 +56,7 @@ export const resendOtp = async(email)=>{
       }
      )
      toast.success(response?.data?.message)
-     return response.data;
+     return response?.data;
    } catch (error) {
     const msg =  error.response?.data?.error ||
                  error.response?.data?.message ||
@@ -92,7 +92,7 @@ export const logout = async()=>{
    try {
      const response = await api.get(`/users/logout`)
      toast.success(response?.data?.message)
-     return response.data;
+     return response?.data;
 
    } catch (error) {
     const msg =  error.response?.data?.error ||
@@ -114,7 +114,7 @@ export const changePassword = async(data)=>{
         }
      )
      toast.success(response?.data?.message)
-     return response.data;
+     return response?.data;
 
    } catch (error) {
     const msg =  error.response?.data?.error ||
