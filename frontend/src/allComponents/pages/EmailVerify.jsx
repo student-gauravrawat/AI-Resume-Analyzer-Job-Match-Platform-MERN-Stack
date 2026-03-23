@@ -100,7 +100,12 @@ function EmailVerify() {
               {errors.otp && <p className="text-red-500 text-xs mt-1 ml-2">{errors.otp.message}</p>}
           </div>
 
-          <Button text={loading ? "Verifying..." : "Verify Email"} type="submit" />
+          <Button text={loading ? (
+                                    <div className="flex items-center justify-center gap-2">
+                                        <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                        Verify Email
+                                    </div>
+                                ) : "Verify Email"} type="submit" />
         </form>
 
         <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-0 sm:space-x-40 mt-6 md:mt-8">

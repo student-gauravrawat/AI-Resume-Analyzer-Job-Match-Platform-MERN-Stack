@@ -119,7 +119,12 @@ function Register() {
           />
 
           <Button
-            text={loading ? "Registering you..." : "Sign Up"}
+            text={loading ?  (
+                                    <div className="flex items-center justify-center gap-2">
+                                        <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                        Sign up
+                                    </div>
+                                ) : "Sign Up"}
             type="submit"
           />
         </form>
