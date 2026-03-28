@@ -25,6 +25,7 @@ function EmailVerify() {
 
   const handleEmailVerify = async (data) => {
     setLoading(true);
+    alert("Please check your all mail or span box")
 
     try {
       const response = await emailVerify(data);
