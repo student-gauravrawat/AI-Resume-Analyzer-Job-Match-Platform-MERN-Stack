@@ -72,7 +72,7 @@ const register = asyncHandler( async(req, res)=>{
      await sendemail(email, otp)
 
      return res.status(200)
-               .json(new ApiResponse(200, createdUser, "Account register sucessfully. OTP has been sent to your email."))
+               .json(new ApiResponse(200, createdUser, "Account register sucessfully. OTP has been sent to your email. Please check your mail or span box!"))
 
 })
 
