@@ -2,8 +2,8 @@ import sgMail from "@sendgrid/mail"
 import {ApiError} from "./ApiError.js"
 
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY ? "✅ Loaded" : "❌ Missing")
-
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+console.log("API KEY:", process.env.SENDGRID_API_KEY ? "✅ Loaded" : "❌ Missing")
 export const sendemail = async(to, otp)=>{
    try {
       await sgMail.send({
