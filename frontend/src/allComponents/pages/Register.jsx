@@ -16,6 +16,7 @@ function Register() {
   const navigate = useNavigate();
 
   const handleRegister = async (data) => {
+    alert("please wait⏳ first API call takes time")
     setLoading(true);
     try {
       console.log(data);
