@@ -17,7 +17,7 @@ export const sendemail = async(to, otp)=>{
       `
     })
    } catch (error) {
-     console.error("Email send error", error)
+     console.error("Full error:", JSON.stringify(error.response?.body, null, 2))
      throw new ApiError(500, "Failed to send OTP on your email")
    }
 }
