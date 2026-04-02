@@ -7,6 +7,7 @@ import {useForm} from "react-hook-form"
 import {login} from "../apis/auth"
 import {useDispatch} from "react-redux"
 import {setAuthUser} from "../redux/authSlice"
+import toast from "react-hot-toast"
 
 function Login() {
 
@@ -17,6 +18,7 @@ function Login() {
  
   const handleLogin = async(data)=>{
     setLoading(true)
+    alert("Please wait, First call takes time")
     try {
       const userdata = {
         password: data.password,
