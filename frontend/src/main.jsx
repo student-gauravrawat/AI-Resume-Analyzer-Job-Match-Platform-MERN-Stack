@@ -7,11 +7,13 @@ import { Provider } from 'react-redux'
 import store from "./redux/store.js"
 import { PersistGate } from 'redux-persist/integration/react'
 import {persistor} from "./redux/store.js"
+import App from "./App.jsx"
 
 createRoot(document.getElementById('root')).render(
   <Provider store={store}>
    <PersistGate persistor={persistor}>
-     <RouterProvider router={router}/>
+     {/* <RouterProvider router={router}/> */}
+     <App/>
      <Toaster/>
    </PersistGate>
   </Provider>
