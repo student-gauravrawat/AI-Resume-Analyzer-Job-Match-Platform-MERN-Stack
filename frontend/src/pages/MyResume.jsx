@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { uploadResume, getAllResume, deleteResume } from "../../apis/resume";
-import useResumeActions from "../../hook/useResumeActions";
+import { uploadResume, getAllResume, deleteResume } from "../apis/resume";
+import useResumeActions from "../hook/useResumeActions";
 
 function MyResume() {
   const [resumes, setResumes] = useState([]);

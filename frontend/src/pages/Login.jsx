@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { LuBrainCircuit } from "react-icons/lu";
-import {Input, Button} from "../index"
+import {Input, Button} from "../components/index"
 import { Link, useNavigate } from "react-router-dom";
 import {useForm} from "react-hook-form"
-import {login} from "../../apis/auth"
+import {login} from "../apis/auth"
 import {useDispatch} from "react-redux"
-import {setAuthUser} from "../../redux/authSlice"
+import {setAuthUser} from "../redux/authSlice"
 
 function Login() {
 

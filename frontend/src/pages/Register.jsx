@@ -5,10 +5,10 @@ import { LuBrainCircuit } from "react-icons/lu";
 import { HiOutlineUser } from "react-icons/hi";
 import { HiOutlineMail } from "react-icons/hi";
 import { HiOutlineLockClosed } from "react-icons/hi";
-import { Input, Button } from "../index";
+import { Input, Button } from "../components/index";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { registerUser } from "../../apis/auth";
+import { registerUser } from "../apis/auth";
 
 function Register() {
   const { register, handleSubmit, reset } = useForm();

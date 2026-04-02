@@ -1,5 +1,5 @@
 import {createBrowserRouter} from "react-router-dom"
-import {Register, EmailVerify, Login, MyResume, JobMatch, History, ChangePassword, AnalyzeResult, Profile} from "../allComponents/index"
+import {Register, EmailVerify, Login, MyResume, JobMatch, History, ChangePassword, AnalyzeResult, Profile} from "../pages/index"
 import MainLayout from "./MainLayout";
 import PublicRoute from "./PublicRoute"
 import ProtectedRoute from "./ProtectedRoute";

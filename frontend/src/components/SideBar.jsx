@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { logout } from "../../apis/auth";
+import { logout } from "../apis/auth";
 import {useDispatch, useSelector} from "react-redux"
-import {clearAuthUser} from "../../redux/authSlice"
+import {clearAuthUser} from "../redux/authSlice"
 
 
 function SideBar() {

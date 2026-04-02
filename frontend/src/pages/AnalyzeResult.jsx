@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Lightbulb } from "lucide-react";
 import { useParams } from "react-router-dom";
-import { getSingleJobMatch } from "../../apis/jobMatch";
+import { getSingleJobMatch } from "../apis/jobMatch";
 
 function AnalyzeResult() {
   const { id } = useParams();

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {getJobMatchHistory} from "../../apis/jobMatch"
+import {getJobMatchHistory} from "../apis/jobMatch"
 import { useNavigate } from "react-router-dom";
 
 function History() {

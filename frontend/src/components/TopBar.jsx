@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { TiThMenu } from "react-icons/ti";
 import { Link, useNavigate } from "react-router-dom";
-import { logout } from "../../apis/auth";
+import { logout } from "../apis/auth";
 import { useDispatch } from 'react-redux';
-import {clearAuthUser} from "../../redux/authSlice"
+import {clearAuthUser} from "../redux/authSlice"
 
 function TopBar() {
   const [isOpen, setIsOpen] = useState(false);

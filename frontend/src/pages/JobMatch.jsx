@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { getAllResume, deleteResume } from "../../apis/resume";
-import { matchResumeWithJob } from "../../apis/jobMatch";
-import useResumeActions from "../../hook/useResumeActions";
+import { getAllResume, deleteResume } from "../apis/resume";
+import { matchResumeWithJob } from "../apis/jobMatch";
+import useResumeActions from "../hook/useResumeActions";
 import { useNavigate } from "react-router-dom";
 
 function JobMatch() {

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
 import { LuBrainCircuit } from "react-icons/lu";
-import { Input, Button } from "../index";
+import { Input, Button } from "../components/index";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { emailVerify, resendOtp } from "../../apis/auth";
+import { emailVerify, resendOtp } from "../apis/auth";
 import { useForm } from "react-hook-form";
 
 function EmailVerify() {

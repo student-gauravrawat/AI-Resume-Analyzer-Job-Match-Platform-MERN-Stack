@@ -1,5 +1,5 @@
 import React from 'react'
-import {TopBar, SideBar} from "../allComponents/index"
+import {TopBar, SideBar} from "../components/index"
 import { Outlet } from 'react-router-dom'
 
 function MainLayout() {

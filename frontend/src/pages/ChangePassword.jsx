@@ -3,8 +3,8 @@ import { LuBrainCircuit } from "react-icons/lu";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import {useForm} from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom";
-import {changePassword} from "../../apis//auth"
-import {Input, Button} from "../index"
+import {changePassword} from "../apis/auth"
+import {Input, Button} from "../components/index"
 
 
 function ChangePassword() {
