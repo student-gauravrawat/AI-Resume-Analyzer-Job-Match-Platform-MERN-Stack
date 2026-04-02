@@ -12,8 +12,7 @@ import App from "./App.jsx"
 createRoot(document.getElementById('root')).render(
   <Provider store={store}>
    <PersistGate persistor={persistor}>
-     {/* <RouterProvider router={router}/> */}
-     <App/>
+     <RouterProvider router={router}/>
      <Toaster/>
    </PersistGate>
   </Provider>
