@@ -17,7 +17,7 @@ export function detectRole(jdText) {
         }
       }
     }
-
+  //   which role score is greater that will be return  
     if (score > maxScore) {
       maxScore = score;
       bestRole = role;
