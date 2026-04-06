@@ -35,6 +35,7 @@ const register = asyncHandler( async(req, res)=>{
         new ApiError(400, "Without @gamil.com email is not acceptable")
      }
 
+     // Does user already exist or not 
      const existedUser = await User.findOne({
         $or: [
             {username},
@@ -181,7 +182,7 @@ const login = asyncHandler( async(req, res)=>{
     const option = {
         httpOnly: true,
         secure: true,
-        sameSite: "none"
+        sameSite: "none" // cookie can send in cross-site requests
     }
 
     return res.status(200)
