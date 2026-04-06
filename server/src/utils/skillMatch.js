@@ -19,7 +19,7 @@ export function skillMatch(resumeText, jdText, roleSkills){
    const missing = jdSkills.filter(skill => !resumeSkills.includes(skill))
 
    const score = jdSkills.length 
-   ? Math.round( (matched.length / jdSkills.length) * 100 ) // ( 2/3 ) * 100 = 66.66 => 67, score will be 67
+   ? Math.round( (matched.length / jdSkills.length) * 100 ) // ( 2/3 ) * 100 = 66.66 => 67, score will be 67 (Matched Skills / Total JD Skills) × 100
    : 0;
 
    return { resumeSkills, jdSkills, matched, missing, score };
