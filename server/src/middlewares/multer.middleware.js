@@ -1,9 +1,9 @@
 import multer from "multer"
 
 //* Convert env string to array 
-const allowedTypes = process.env.ALLOWED_FILE_TYPES
-                    ?.split(",")
-                    .map(type=> type.trim());
+const allowedTypes = process.env.ALLOWED_FILE_TYPES // first, loading env vaiable
+                    ?.split(",")// I am seprating every file extention 
+                    .map(type=> type.trim()); // removing space from left & right side 
 
 //* File filter
 const fileFilter = (req, file, cb)=>{
@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
        cb(null, "./public/resumes")
     },
     filename: function(req, file, cb){
-      const uniqueName = Date.now() + "-" + Math.round(Math.random()*1e9)
+      const uniqueName = Date.now() + "-" + Math.round(Math.random()*1e9) // here i am making file name unique.
         cb(null, uniqueName + "-" + file.originalname)
     }
 })
