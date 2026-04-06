@@ -21,7 +21,7 @@ const uploadResume = asyncHandler( async(req, res)=>{
     if (!resumeText || resumeText.trim().length === 0) {
     if (fs.existsSync(localpath)) fs.unlinkSync(localpath);
     throw new ApiError(400, "Text extraction failed! Check file");
-}
+  }
 
     const cloudinaryRes = await uploadOnCloudinary(localpath);
 
