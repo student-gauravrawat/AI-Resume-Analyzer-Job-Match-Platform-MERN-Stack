@@ -182,7 +182,7 @@ const login = asyncHandler( async(req, res)=>{
     const option = {
         httpOnly: true,
         secure: true,
-        sameSite: "none" // cookie can send in cross-site requests
+        sameSite: "none" // cookie can be sent in cross-site requests
     }
 
     return res.status(200)
