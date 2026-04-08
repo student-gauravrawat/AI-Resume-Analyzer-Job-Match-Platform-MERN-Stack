@@ -42,7 +42,7 @@ function Navbar() {
                       className=' text-[#BEC0CAFF] text-md cursor-pointer font-semibold' 
                       key={item.no}
                      >
-                       <Link to={item.to} smooth={true} duration={500}>{item.title}</Link>
+                       <Link activeClass='text-blue-500 font-bold' spy={true} to={item.to} offset={-30} smooth={true} duration={500}>{item.title}</Link>
                      </li>
                   ))}
                </ul>

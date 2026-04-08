@@ -3,6 +3,7 @@ import {Register, EmailVerify, Login, MyResume, JobMatch, History, ChangePasswor
 import MainLayout from "./MainLayout";
 import PublicRoute from "./PublicRoute"
 import ProtectedRoute from "./ProtectedRoute";
+import App from "../App";
 
 
 const router = createBrowserRouter([
@@ -11,6 +12,11 @@ const router = createBrowserRouter([
        element: <PublicRoute>
                   <Login/>
                 </PublicRoute>
+    }, 
+    {
+       path: "/ui",
+       element:   <App/>
+               
     }, 
     {
         path:"/register",

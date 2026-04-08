@@ -24,7 +24,7 @@ function AboutWork() {
   ]
 
   return (
-    <section className=' mt-5 mb-5 px-4 '>
+    <section className=' mt-5 mb-5 px-4'>
 
         <div className=' felx flex-row text-center space-y-3 '>
           <button className=' w-18 bg-[#8294e90d]  rounded-lg text-[#7e91bb]'>Process</button>
