@@ -2,7 +2,7 @@ import React from 'react'
 
 function HeroSection() {
   return (
-    <section className='bg-[linear-gradient(180deg,#0B14414D_0%,#181920FF_100%)] h-150 lg:pt-15 lg:pl-18 flex content-center items-start w-full'>
+    <section className='bg-[linear-gradient(180deg,#0B14414D_0%,#181920FF_100%)]  pt-38 pl-18 flex items-start w-full'>
        {/* project Detailes */}
         <div className='ml-5'>
            

@@ -22,12 +22,12 @@ function Input({
                     id={id}
                     type={type}
                     autoComplete={type === "password" ? "current-password" : "on"}
-                    className={`w-full px-4 py-3 bg-white/40 border border-blue-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/60 transition-all placeholder:text-gray-400 ${classname}`}
+                    className={`w-full px-4 py-3 bg-white/60 border border-blue-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white/60 transition-all placeholder:text-gray-800 ${classname} text-black `}
                     ref={ref}
                     {...props}
                 />
                 {Icon && (
-                    <div className="absolute right-4 text-gray-400">
+                    <div className="absolute right-4 text-gray-800">
                         <Icon size={20} />
                     </div>
                 )}

@@ -6,6 +6,7 @@ import { Input, Button } from "../components/index";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { emailVerify, resendOtp } from "../apis/auth";
 import { useForm } from "react-hook-form";
+import ReactDom from "react-dom"
 
 function EmailVerify() {
   const location = useLocation()
@@ -25,7 +26,7 @@ function EmailVerify() {
 
   const handleEmailVerify = async (data) => {
     setLoading(true);
-
+    alert("please wait...")
     try {
       const response = await emailVerify(data);
       if(response?.success) navigate("/login")
@@ -39,8 +40,9 @@ function EmailVerify() {
     }
   };
 
-  return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-linear-to-br from-[#e0eafc] to-[#cfdef3] px-4  font-sans">
+  return ReactDom.createPortal(
+    open ? (
+      <>
       <div className="relative w-full max-w-125 bg-white/60 backdrop-blur-xl border border-white/40 rounded-[2.5rem] md:rounded-[3rem] shadow-2xl pt-8 px-6 pb-6 md:pt-12 md:px-12 md:pb-12 flex flex-col items-center">
         {/* Header Icons */}
         <div className="flex gap-2 mb-4 text-blue-900">
@@ -117,7 +119,9 @@ function EmailVerify() {
           </button>
         </div>
       </div>
-    </div>
+    </>
+    ): null ,
+    document.getElementById("portal")
   );
 }
 
