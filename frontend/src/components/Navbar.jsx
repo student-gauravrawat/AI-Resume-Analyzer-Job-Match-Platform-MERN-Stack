@@ -60,7 +60,7 @@ function Navbar() {
                   activeClass="text-blue-500 font-bold"
                   spy={true}
                   to={item.to}
-                  offset={-30}
+                  offset={-98}
                   smooth={true}
                   duration={500}
                 >
