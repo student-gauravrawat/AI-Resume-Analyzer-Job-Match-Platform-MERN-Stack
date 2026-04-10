@@ -33,9 +33,9 @@ function History() {
     <div className="p-10">
       <h2 className="text-2xl font-semibold mb-1">Your job match history</h2>
 
-      <div className="bg-white rounded border mt-3.5 overflow-x-auto">
+      <div className="bg-[#444447cc] rounded border mt-3.5 overflow-x-auto">
         <table className="w-full text-sm min-w-150">
-          <thead className="bg-gray-100">
+          <thead className="bg-[#2e2e32cc]">
             <tr>
               <th className="p-2 text-left">Filename</th>
               <th className="p-2 ">Job Role</th>
@@ -63,7 +63,7 @@ function History() {
                 <tr className="border-t" key={data._id}>
                   <td className="p-2">{data.resume?.fileName}</td>
                   <td className="p-2 text-center">{data.jobRole}</td>
-                  <td className="p-2 text-center text-green-700">
+                  <td className="p-2 text-center text-green-300">
                     {data.score + "%" }
                   </td>
                   <td className="p-2 text-center">
@@ -73,7 +73,7 @@ function History() {
                   <td className="p-2 text-center space-x-4">
                     <button
                       onClick={()=> handleView(data._id)}
-                      className="text-blue-600 cursor-pointer  hover:text-blue-800 hover:underline"
+                      className="text-blue-400 cursor-pointer  hover:text-blue-300 "
                     >
                       View
                     </button>

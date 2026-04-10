@@ -17,7 +17,7 @@ function SideBar() {
   };
 
   return (
-    <div className="md:flex flex-col w-64 bg-gray-100 border-r h-full p-4 hidden">
+    <div className="md:flex flex-col w-64 bg-[linear-gradient(180deg,#0B14414D_0%,#181920FF_100%)] border-r h-full p-4 hidden">
       {/* Top Section: Profile and Menu */}
      {authUser
      ?( <div className="grow ">
@@ -29,7 +29,7 @@ function SideBar() {
           <div>
             <p className="font-medium text-md">{authUser?.username}</p>
             <Link to="/profile" className="text-sm text-green-600">
-              ● <span className=" hover:underline">Profile</span>
+              ● <span className="hover:font-medium ">Profile</span>
             </Link>
           </div>
         </div>
@@ -39,7 +39,7 @@ function SideBar() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `${isActive ? "bg-blue-600 text-white scale-105 active:scale-95" : ""}flex items-center px-4 py-2 text-gray-700 transition-all duration-200 ease-in-out rounded-lg`
+              `${isActive ? "bg-blue-600 text-white scale-105 active:scale-95" : ""}flex items-center px-4 py-2  transition-all duration-200 ease-in-out rounded-lg`
             }
           >
             My Resumes
@@ -48,7 +48,7 @@ function SideBar() {
           <NavLink
             to="/jobmatch"
             className={({ isActive }) =>
-              `${isActive ? "bg-blue-600 text-white scale-105 active:scale-95" : ""}flex items-center px-4 py-2 text-gray-700 transition-all duration-200 ease-in-out rounded-lg`
+              `${isActive ? "bg-blue-600 text-white scale-105 active:scale-95" : ""}flex items-center px-4 py-2 transition-all duration-200 ease-in-out rounded-lg`
             }
           >
             Job Match
@@ -57,7 +57,7 @@ function SideBar() {
           <NavLink
             to="/history"
             className={({ isActive }) =>
-              `${isActive ? "bg-blue-600 text-white scale-105 active:scale-95" : ""}flex items-center px-4 py-2 text-gray-700 transition-all duration-200 ease-in-out rounded-lg`
+              `${isActive ? "bg-blue-600 text-white scale-105 active:scale-95" : ""}flex items-center px-4 py-2 transition-all duration-200 ease-in-out rounded-lg`
             }
           >
             History
@@ -73,7 +73,7 @@ function SideBar() {
       <div  className="">
         <button
           onClick={handleLogout}
-          className="w-full text-left px-4 py-2 text-red-600  font-medium hover:bg-red-500 hover:text-white rounded-lg transition-colors"
+          className="w-full text-left px-4 py-2 text-red-300  font-medium hover:bg-red-500 hover:text-white rounded-lg transition-colors"
         >
           Log Out
         </button>

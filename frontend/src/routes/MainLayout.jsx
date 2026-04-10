@@ -10,7 +10,7 @@ function MainLayout() {
       <div className="flex flex-1 overflow-hidden">
         <SideBar/>
 
-        <div className="flex-1 overflow-y-auto bg-gray-50 p-4">
+        <div className="flex-1 overflow-y-auto bg-[#2d2e3bcc] p-4">
           <Outlet />
         </div>
       </div>

@@ -58,12 +58,12 @@ function MyResume() {
   };
 
   return (
-    <div className="p-6">
-      <h2 className="text-xl font-semibold mb-1">
+    <div className="p-6 ">
+      <h2 className="text-2xl font-semibold mb-1">
         Welcome to AI Resume Analyzer, Gaurav Rawat!
       </h2>
 
-      <p className="text-sm text-gray-500 mb-4">
+      <p className="text-md text-gray-400 mb-4">
         Manage and analyze your resumes.
       </p>
 
@@ -77,27 +77,27 @@ function MyResume() {
         />
       </label>
       {uploading && (
-        <div className="flex items-center gap-4 bg-indigo-50 border border-indigo-100 p-4 rounded-xl mb-6 animate-pulse">
+        <div className="flex items-center gap-4  p-4 rounded-xl mb-6 animate-pulse">
           {/* Animated Spinner */}
-          <div className="w-6 h-6 border-3 border-indigo-200 border-t-indigo-600 rounded-full animate-spin"></div>
+          <div className="w-6 h-6 border-3 border-indigo-200 border-t-indigo-500 rounded-full animate-spin"></div>
 
           <div>
-            <p className="text-indigo-900 font-bold">
+            <p className="font-bold">
               Uploading your resume...
             </p>
-            <p className="text-indigo-600 text-xs">
+            <p className=" text-xs">
               Almost there! Securely saving your resume...
             </p>
           </div>
         </div>
       )}
 
-      <h2 className="text-gray-800 text-xl font-semibold ">Your All Resumes</h2>
+      <h2 className=" text-xl font-semibold mt-5 ">Your All Resumes</h2>
 
       {/* Table */}
-      <div className="bg-white rounded border mt-3.5 overflow-x-auto">
+      <div className="bg-[#444447cc] rounded border mt-3.5 overflow-x-auto">
         <table className="w-full text-sm min-w-150">
-          <thead className="bg-gray-100">
+          <thead className="bg-[#2e2e32cc]">
             <tr>
               <th className="p-2 text-left">Filename</th>
               <th className="p-2">Uploaded</th>
@@ -126,27 +126,27 @@ function MyResume() {
                   <td className="p-2 text-center">
                     {new Date(resume.createdAt).toLocaleDateString()}
                   </td>
-                  <td className="p-2 text-center text-green-700">
+                  <td className="p-2 text-center text-green-300">
                     {resume.status}
                   </td>
                   <td className="p-2 text-center space-x-4">
                     <button
                       onClick={() => handleView(resume.fileUrl.url)}
-                      className="text-blue-600 cursor-pointer  hover:text-blue-800 hover:underline"
+                      className="text-blue-400 cursor-pointer  hover:text-blue-300 "
                     >
                       View
                     </button>
 
                     <button
                       onClick={() => handleDownload(resume.fileUrl.url)}
-                      className="text-green-600 cursor-pointer hover:text-green-800 hover:underline"
+                      className="text-green-400 cursor-pointer hover:text-green-300 "
                     >
                       Download
                     </button>
 
                     <button
                       onClick={() => handleResumedelete(resume._id)}
-                      className="text-red-600 cursor-pointer hover:text-red-800 hover:underline"
+                      className="text-red-400 cursor-pointer hover:text-red-300 "
                     >
                       Delete
                     </button>

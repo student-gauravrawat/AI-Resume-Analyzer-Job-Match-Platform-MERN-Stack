@@ -81,7 +81,7 @@ function JobMatch() {
       <h2 className="text-2xl font-semibold mb-1">
         Job Description Matching
       </h2>
-      <p className="text-sm text-gray-500 mb-5">
+      <p className="text-sm text-gray-200 mb-5">
         Compare your resume with job role
       </p>
 
@@ -89,7 +89,7 @@ function JobMatch() {
       {/* Job Match Form */}
       <form onSubmit={handleJobMatch}>
         <div className="block mt-3 mb-6">
-          <label className="text-md text-gray-700 font-semibold ">
+          <label className="text-md  font-semibold ">
             Select resume
           </label>
           <div>
@@ -98,12 +98,12 @@ function JobMatch() {
               value={selectedResume ? selectedResume.fileName : ""}
               placeholder="Select Resume"
               readOnly
-              className="w-auto h-8 px-auto bg-white text-black font-normal p-2 rounded-lg block mt-3 ml-4 border-0 outline-none focus:ring-0 truncate"
+              className="w-auto h-8 px-auto bg-[#444447cc] font-normal p-2 rounded-lg block mt-3 ml-4 border-0 outline-none focus:ring-0 truncate"
             />
           </div>
         </div>
         <div className="mt-2 ">
-          <label className="text-md text-gray-700 font-semibold mt-3">
+          <label className="text-md  font-semibold mt-3">
             Job Description
           </label>
           <textarea
@@ -111,7 +111,7 @@ function JobMatch() {
             required
             rows="3"
             placeholder="Enter Job Description Here..."
-            className="block mt-2 bg-white ml-4 p-3 w-[50%] focus:outline-none focus:ring-1 rounded-lg  focus:ring-blue-500 "
+            className="block mt-2 bg-[#636367cc] ml-4 p-3 w-[50%] focus:outline-none focus:ring-1 rounded-lg  focus:ring-white "
           />
         </div>
         <button
@@ -133,13 +133,13 @@ function JobMatch() {
       )}
 
       {/* Resume List Here */}
-      <h2 className=" mt-4 text-gray-900 text-xl font-semibold ">
+      <h2 className=" mt-7  text-xl font-semibold ">
         Select Your Resume Here
       </h2>
 
-      <div className="bg-white rounded border mt-3.5 overflow-x-auto">
+      <div className="bg-[#444447cc] rounded border mt-3.5 overflow-x-auto">
         <table className="w-full text-sm min-w-150">
-          <thead className="bg-gray-100">
+          <thead className="bg-[#2e2e32cc]">
             <tr>
               <th className="p-2 text-left">Filename</th>
               <th className="p-2">Uploaded</th>
@@ -168,27 +168,27 @@ function JobMatch() {
                   <td className="p-2 text-center">
                     {new Date(resume.createdAt).toLocaleDateString()}
                   </td>
-                  <td className="p-2 text-center text-green-700">
+                  <td className="p-2 text-center text-green-300">
                     {resume.status}
                   </td>
                   <td className="p-2 text-center space-x-4">
                     <button
                       onClick={() => handleView(resume.fileUrl.url)}
-                      className="text-blue-600 cursor-pointer  hover:text-blue-800 hover:underline"
+                      className="text-blue-400 cursor-pointer  hover:text-blue-300 "
                     >
                       View
                     </button>
 
                     <button
                       onClick={() => setSelectedResume(resume)}
-                      className="text-green-600 cursor-pointer hover:text-green-800 hover:underline"
+                      className="text-green-400 cursor-pointer hover:text-green-300 "
                     >
                       Job Match
                     </button>
 
                     <button
                       onClick={() => handleResumedelete(resume._id)}
-                      className="text-red-600 cursor-pointer hover:text-red-800 hover:underline"
+                      className="text-red-400 cursor-pointer hover:text-red-300 "
                     >
                       Delete
                     </button>

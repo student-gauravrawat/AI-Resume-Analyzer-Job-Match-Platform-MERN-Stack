@@ -37,24 +37,24 @@ function AnalyzeResult() {
   return (
     <>
       {loading ? (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-          <div className="bg-white p-8 rounded-2xl shadow-lg text-center space-y-4">
+        <div className="min-h-screen flex items-center justify-center bg-[#3c3c41cc]">
+          <div className="p-8 rounded-2xl shadow-lg text-center space-y-4">
             {/* Spinner */}
-            <div className="w-12 h-12 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin mx-auto"></div>
+            <div className="w-12 h-12 border-4 border-indigo-800 border-t-indigo-600 rounded-full animate-spin mx-auto"></div>
 
             {/* Text */}
-            <h2 className="text-lg font-semibold text-gray-700">
+            <h2 className="text-lg font-semibold ">
               Analyzing Resume...
             </h2>
 
-            <p className="text-sm text-gray-500">
+            <p className="text-sm ">
               AI is calculating your job match
             </p>
           </div>
         </div>
       ) : data === null ? (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-          <div className="max-w-md w-full bg-white rounded-3xl shadow-xl p-10 text-center border border-gray-100">
+        <div className="min-h-screen flex items-center justify-center bg-[#3c3c41cc] p-4">
+          <div className="max-w-md w-full bg-[#3c3c41cc] rounded-3xl shadow-xl p-10 text-center border">
             {/* Error Icon */}
             <div className="w-20 h-20 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
               <svg
@@ -92,34 +92,34 @@ function AnalyzeResult() {
           </div>
         </div>
       ) : (
-        <div className="min-h-screen bg-gray-100 p-8">
+        <div className="min-h-screen  p-8">
           <div className="max-w-7xl mx-auto space-y-8">
             {/* Header */}
-            <div className="bg-white rounded-2xl shadow p-6">
-              <h1 className="text-2xl font-bold text-gray-800">
+            <div className="bg-[#3c3c41cc] rounded-2xl shadow p-6">
+              <h1 className="text-2xl font-bold">
                 Job Compatibility Report
               </h1>
 
-              <p className="mt-3 text-gray-600">
+              <p className="mt-3 ">
                 <span className="font-bold">Resume:</span>{" "}
-                {data.resume.fileName}
+                <span className="font-extralight capitalize">{data.resume.fileName}</span>
               </p>
 
-              <p className="text-gray-600 mt-1">
+              <p className=" mt-1">
                 <span className="font-bold">Job Role:</span>{" "}
-                {data.jobRole}
+                <span className=" font-extralight capitalize"> {data.jobRole}</span>
               </p>
 
-              <p className="text-gray-600 mt-1">
+              <p className=" mt-1">
                 <span className="font-bold">Job Description:</span>{" "}
-                {data.jobDescription}
+                <span className=" font-extralight">{data.jobDescription}</span>
               </p>
             </div>
 
             {/* Score + Skills */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Score Card */}
-              <div className="bg-white rounded-2xl shadow p-6 flex flex-col items-center justify-center">
+              <div className="bg-[#68686ecc] rounded-2xl shadow p-6 flex flex-col items-center justify-center">
                 <h2 className="font-semibold text-lg mb-4">Match Score</h2>
 
                 <RadialBarChart
@@ -161,19 +161,19 @@ function AnalyzeResult() {
                 </RadialBarChart>
 
                 <div className="-mt-24 text-2xl ">
-                  <span className=" font-black text-slate-800">
+                  <span className=" font-black ">
                     {data.score}%
                   </span>
-                  <span className="text-gray-400  font-medium"> / 100</span>
-                  <p className="text-sm text-gray-500 text-center mt-2 font-medium">
+                  <span className="font-medium text-slate-300"> / 100</span>
+                  <p className="text-sm  text-center mt-2 font-medium">
                     Matching Probability
                   </p>
                 </div>
               </div>
 
               {/* Matched Skills */}
-              <div className="bg-white rounded-2xl shadow p-6">
-                <h2 className="font-semibold text-lg mb-4 text-green-600">
+              <div className="bg-[#3c3c41cc] rounded-2xl shadow p-6">
+                <h2 className="font-semibold text-lg mb-4 text-green-300">
                   Matched Skills
                 </h2>
 
@@ -184,7 +184,7 @@ function AnalyzeResult() {
                     data.matchedSkills.map((skill, i) => (
                       <li
                         key={i}
-                        className="bg-green-50 text-green-700 px-3 py-2 rounded-lg"
+                        className=" bg-[#4e4e52cc] text-green-300 px-3 py-2 rounded-lg"
                       >
                         ✔ {skill}
                       </li>
@@ -194,8 +194,8 @@ function AnalyzeResult() {
               </div>
 
               {/* Missing Skills */}
-              <div className="bg-white rounded-2xl shadow p-6">
-                <h2 className="font-semibold text-lg mb-4 text-red-600">
+              <div className="bg-[#3c3c41cc] rounded-2xl shadow p-6">
+                <h2 className="font-semibold text-lg mb-4 text-red-300">
                   Missing Skills
                 </h2>
 
@@ -206,9 +206,9 @@ function AnalyzeResult() {
                     data.missingSkills.map((skill, i) => (
                       <li
                         key={i}
-                        className="bg-green-50 text-green-700 px-3 py-2 rounded-lg"
+                        className="bg-[#4e4e52cc] text-red-200 px-3 py-2 rounded-lg"
                       >
-                        ✔ {skill}
+                        ❌ {skill}
                       </li>
                     ))
                   )}
@@ -217,17 +217,17 @@ function AnalyzeResult() {
             </div>
 
             {/* AI Suggestions */}
-            <div className="bg-white rounded-2xl shadow p-6">
+            <div className="bg-[#3c3c41cc] rounded-2xl shadow p-6">
               <div className="flex items-center gap-3 mb-6">
-                <div className="bg-amber-100 p-2 rounded-lg text-amber-600">
+                <div className="bg-[#4e4e52cc] p-2 rounded-lg text-amber-600">
                   <Lightbulb size={24} />
                 </div>
-                <h2 className="text-xl font-bold text-slate-800">
+                <h2 className="text-xl font-bold ">
                   AI Expert Analysis
                 </h2>
               </div>
 
-              <div className="prose max-w-none prose-indigo bg-indigo-50 p-6 rounded-xl leading-relaxed">
+              <div className="prose max-w-none prose-indigo bg-[#4e4e52cc] p-6 rounded-xl leading-relaxed">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>
                   {data.suggestions.join("\n\n")}
                 </ReactMarkdown>
