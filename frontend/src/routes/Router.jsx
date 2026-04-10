@@ -3,7 +3,6 @@ import {Register, EmailVerify, Login, MyResume, JobMatch, History, ChangePasswor
 import MainLayout from "./MainLayout";
 import PublicRoute from "./PublicRoute"
 import ProtectedRoute from "./ProtectedRoute";
-import App from "../App";
 import {LandingPage} from "../pages/index.js"
 
 
