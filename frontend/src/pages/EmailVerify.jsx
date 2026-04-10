@@ -56,7 +56,7 @@ function EmailVerify({open, onClose, email, onOpenLogin, onOpenRegister }) {
         top-40
         overflow-hidden 
         ">
-      <div className="relative w-full max-w-125 bg-white/20 backdrop-blur-xl shadow-2xl p-8 md:pt-12 md:px-12 md:pb-12 flex flex-col items-center">
+      <div className="relative w-full max-w-125 bg-white/20 backdrop-blur-xl shadow-2xl p-8 md:pt-10 md:px-10 md:pb-10 flex flex-col items-center">
       
         {/*Close Button*/}
         <button

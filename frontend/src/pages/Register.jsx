@@ -46,7 +46,7 @@ function Register({ open, openLogin, onClose, onSuccess }) {
         overflow-hidden "
       >
         {/* Main Transparent Card */}
-        <div className="relative w-full bg-white/20 backdrop-blur-xl shadow-2xl p-8 md:px-9 flex flex-col items-center">
+        <div className="relative w-full bg-white/20 backdrop-blur-xl shadow-2xl p-5 md:px-9 flex flex-col items-center">
           <button
             onClick={onClose}
             className="absolute top-4 right-5 text-slate-500 hover:text-black text-2xl font-bold cursor-pointer"

@@ -37,7 +37,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex items-center justify-between w-full fixed top-0 left-0 z-50 bg-[#181920CC] backdrop-blur-sm px-6 py-3 shadow-md">
+    <nav className="flex items-center justify-between w-full fixed top-0 left-0 z-50 bg-[#181920CC] backdrop-blur-sm px-6 py-1.5 shadow-md">
       {/* Left Section - Logo + Links */}
       <div className="flex items-center gap-9">
         {/* Logo */}

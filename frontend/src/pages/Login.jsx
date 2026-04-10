@@ -58,7 +58,7 @@ function Login({ open, openRegister, onClose, openVerify }) {
         "
       >
         {/* Main Transparent Card */}
-        <div className="relative w-full max-w-125 bg-white/20 backdrop-blur-xl  shadow-2xl p-8 md:p-12 flex flex-col items-center">
+        <div className="relative w-full max-w-125 bg-white/20 backdrop-blur-xl  shadow-2xl p-8 md:p-10 flex flex-col items-center">
           <button
             onClick={onClose}
             className="absolute top-4 right-5 text-slate-500 hover:text-black text-2xl font-bold cursor-pointer"
