@@ -37,14 +37,14 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex content-center items-center lg:gap-[45%] w-full fixed mb-20 bg-[#181920CC]">
+    <nav className="flex content-center items-center lg:gap-[45%] w-full fixed mb-20 bg-[#181920CC] mx-auto">
       <section className="flex content-center items-center gap-20">
         {/* logo with name */}
-        <div className=" flex content-center items-center">
+        <div className=" flex content-center items-center w-full">
           <img
             src="/logo.png"
             alt="web_logo"
-            className="w-23 h-23 rounded-full mr-2 mt-2"
+            className="w-22 h-22 rounded-full mr-2 mt-2"
           />
           <h1 className=" text-[#798BE7FF] text-[20px] font-bold">
             AI Resume Analyzer
@@ -53,7 +53,7 @@ function Navbar() {
 
         {/* Links */}
         <div>
-          <ul className=" flex justify-center items-center gap-6">
+          <ul className=" flex justify-center items-center gap-6 w-full">
             {lists.map((item) => (
               <li
                 className=" text-[#BEC0CAFF] text-md cursor-pointer font-semibold"
