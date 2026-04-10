@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
 import { LuBrainCircuit } from "react-icons/lu";
@@ -8,17 +8,20 @@ import { emailVerify, resendOtp } from "../apis/auth";
 import { useForm } from "react-hook-form";
 import ReactDom from "react-dom"
 
-function EmailVerify() {
-  const location = useLocation()
-  const emailFromState = location.state?.email || "";
-  const { handleSubmit, register, reset, watch,formState: {errors} } = useForm({
+function EmailVerify({open, onClose, email, onOpenLogin, onOpenRegister }) {
+  const { handleSubmit, register, reset, watch, formState: {errors}, setValue } = useForm({
     defaultValues: {
-      email: emailFromState
+      email: email || ""
     }
   });
   const currentEmail = watch("email")
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate()
+
+  useEffect(()=>{
+    if(email){
+      setValue("email", email)
+    }
+  },[email])
 
   const handleResendOTP = async(email)=>{
       await resendOtp({email: currentEmail})
@@ -29,7 +32,7 @@ function EmailVerify() {
     alert("please wait...")
     try {
       const response = await emailVerify(data);
-      if(response?.success) navigate("/login")
+      if(response?.success) onOpenLogin();
 
     } catch (error) {
       console.log("error", error);
@@ -42,19 +45,38 @@ function EmailVerify() {
 
   return ReactDom.createPortal(
     open ? (
-      <>
-      <div className="relative w-full max-w-125 bg-white/60 backdrop-blur-xl border border-white/40 rounded-[2.5rem] md:rounded-[3rem] shadow-2xl pt-8 px-6 pb-6 md:pt-12 md:px-12 md:pb-12 flex flex-col items-center">
+      <div
+        className=" 
+        fixed 
+        z-50 
+        w-fit
+        rounded-4xl 
+        shadow-2xl 
+        left-[38%]
+        top-50
+        overflow-hidden 
+        ">
+      <div className="relative w-full max-w-125 bg-white/20 backdrop-blur-xl shadow-2xl p-8 md:pt-12 md:px-12 md:pb-12 flex flex-col items-center">
+      
+        {/*Close Button*/}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-6 text-slate-500 hover:text-black text-2xl font-bold cursor-pointer"
+        >
+          ✕
+        </button>
+
         {/* Header Icons */}
-        <div className="flex gap-2 mb-4 text-blue-900">
+        <div className="flex gap-2 mb-4 text-blue-300">
           <LuBrainCircuit size={32} />
           <IoDocumentTextOutline size={32} />
         </div>
 
         <div className="text-center mb-6 md:mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-800">
+          <h1 className="text-3xl md:text-4xl font-bold text-black">
             Verify Your Email
           </h1>
-          <p className="text-slate-500 mt-2 text-md md:text-base">
+          <p className="text-slate-200 mt-2 text-md md:text-base">
             Unlock your career potential
           </p>
         </div>
@@ -111,15 +133,19 @@ function EmailVerify() {
         </form>
 
         <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-0 sm:space-x-40 mt-6 md:mt-8">
-          <button className="text-blue-700 font-bold hover:underline text-md md:text-base">
-            <Link to="/login">Login</Link>
+          <button 
+             onClick={onOpenLogin}
+             className="text-blue-300 font-bold text-md md:text-base">
+            Login
           </button>
-          <button className="text-blue-700 font-bold hover:underline text-md md:text-base">
-            <Link to="/register">Register New Account</Link>
+          <button 
+            onClick={onOpenRegister}
+            className="text-blue-300 font-bold text-md md:text-base">
+            Register New Account
           </button>
         </div>
       </div>
-    </>
+    </div>
     ): null ,
     document.getElementById("portal")
   );

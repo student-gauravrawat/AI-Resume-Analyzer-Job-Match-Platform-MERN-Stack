@@ -9,7 +9,7 @@ import { Input, Button } from "../components/index";
 import { useForm } from "react-hook-form";
 import { registerUser } from "../apis/auth";
 
-function Register({ open, openLogin, onClose }) {
+function Register({ open, openLogin, onClose, onSuccess }) {
   const { register, handleSubmit, reset } = useForm();
   const [loading, setLoading] = useState(false);
 
@@ -21,10 +21,8 @@ function Register({ open, openLogin, onClose }) {
       const response = await registerUser(data);
       console.log(response);
       if (response?.success) {
-        navigate("/email-verify", {
-          state: { email: data.email },
-        });
-        reset();
+        onSuccess(data.email)
+        reset()
       }
     } catch (error) {
       console.log("error", error);
@@ -51,7 +49,7 @@ function Register({ open, openLogin, onClose }) {
         <div className="relative w-full bg-white/20 backdrop-blur-xl shadow-2xl p-8 md:px-9 flex flex-col items-center">
           <button
             onClick={onClose}
-            className="absolute top-4 right-5 text-white/70 hover:text-white text-2xl font-bold cursor-pointer"
+            className="absolute top-4 right-5 text-slate-500 hover:text-black text-2xl font-bold cursor-pointer"
           >
             ✕
           </button>

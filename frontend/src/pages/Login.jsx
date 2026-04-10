@@ -8,9 +8,9 @@ import { useForm } from "react-hook-form";
 import { login } from "../apis/auth";
 import { useDispatch } from "react-redux";
 import { setAuthUser } from "../redux/authSlice";
-import toast from "react-hot-toast";
 
-function Login({ open, openRegister, onClose }) {
+
+function Login({ open, openRegister, onClose, openVerify }) {
   const { register, handleSubmit, reset } = useForm();
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
@@ -33,6 +33,7 @@ function Login({ open, openRegister, onClose }) {
       const response = await login(userdata);
       // console.log(response)
       dispatch(setAuthUser(response.loggedUser));
+      onclose(); //for closing portal
       navigate("/");
     } catch (error) {
       console.log("error", error);
@@ -60,7 +61,7 @@ function Login({ open, openRegister, onClose }) {
         <div className="relative w-full max-w-125 bg-white/20 backdrop-blur-xl  shadow-2xl p-8 md:p-12 flex flex-col items-center">
           <button
             onClick={onClose}
-            className="absolute top-4 right-5 text-white/70 hover:text-white text-2xl font-bold cursor-pointer"
+            className="absolute top-4 right-5 text-slate-500 hover:text-black text-2xl font-bold cursor-pointer"
           >
             ✕
           </button>
@@ -106,8 +107,10 @@ function Login({ open, openRegister, onClose }) {
 
           {/* Register & Email Verify Redirect */}
           <div className=" flex flex-col sm:flex-row items-center gap-2 sm:gap-0 sm:space-x-20 mt-6 md:mt-8 ">
-            <button className="text-blue-300 font-bold  mt-1">
-              <Link to="/email-verify"> Verify your email</Link>
+            <button 
+             onClick={openVerify}
+             className="text-blue-300 font-bold  mt-1">
+               Verify your email
             </button>
 
             <button

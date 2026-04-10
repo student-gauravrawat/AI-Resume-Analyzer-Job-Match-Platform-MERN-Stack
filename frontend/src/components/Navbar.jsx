@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
-import { Login, Register } from "../pages/index";
+import { Login, Register, EmailVerify } from "../pages/index";
 
 function Navbar() {
-  const [login, setLogin] = useState(false);
-  const [register, setRegister] = useState(false);
+  const [activeModal, setActiveModal] = useState(null);
+  const [userEmail, setUserEmail] = useState("");
   const lists = [
     {
       no: 1,
@@ -23,14 +23,17 @@ function Navbar() {
     },
   ];
 
-  const handleLoginOpen = () => {
-    setLogin(true);
-    setRegister(false); 
+  const openLogin = () => setActiveModal("login");
+  const openRegister = () => setActiveModal("register");
+  
+  const openVerify = (email = "") => {
+    if (email) setUserEmail(email); 
+    setActiveModal("verify");
   };
 
-  const handleRegisterOpen = () => {
-    setRegister(true);
-    setLogin(false); 
+  const closeAll = () => {
+    setActiveModal(null);
+    setUserEmail(""); 
   };
 
   return (
@@ -76,20 +79,40 @@ function Navbar() {
       <section className=" flex content-center items-center gap-7 ">
         <button
           className="text-[#BEC0CAFF] cursor-pointer text-lg"
-           onClick={handleLoginOpen}
+           onClick={openLogin}
         >
           Login
         </button>
         <button
           className=" bg-[#798BE7FF] hover:bg-[#aeb7e6] text-[#181920FF] font-semibold w-30 h-10 cursor-pointer rounded-lg"
-          onClick={handleRegisterOpen}
+          onClick={openRegister}
         >
           Sign Up Free
         </button>
       </section>
 
-      <Login open={login} openRegister={handleRegisterOpen} onClose={() => setLogin(false)}/>
-      <Register open={register} openLogin={handleLoginOpen} onClose={() => setRegister(false)}/>
+      <Login 
+        open={activeModal === "login"} 
+        onClose={closeAll} 
+        openRegister={openRegister} 
+        openVerify={()=> openVerify()}
+        />
+
+      <Register 
+         open={activeModal === "register"} 
+         onClose={closeAll}
+         openLogin={openLogin} 
+         onSucess={(email)=> openVerify(email)}
+         />
+
+       <EmailVerify 
+        open={activeModal === "verify"} 
+        email={userEmail} 
+        onClose={closeAll} 
+        onOpenLogin={openLogin} 
+        onOpenRegister={openRegister}
+      />
+
     </nav>
   );
 }
