@@ -33,7 +33,7 @@ function HeroSection() {
            <img 
              src="/score.jpeg" 
              alt="image" 
-             className='w-169.5 h-110.5 -ml-40.75' 
+             className='w-179.5 h-110.5 -ml-40.75' 
              />
         </div>
 
