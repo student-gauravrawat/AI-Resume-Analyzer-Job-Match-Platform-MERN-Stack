@@ -3,7 +3,7 @@ import ReactDom from "react-dom";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { LuBrainCircuit } from "react-icons/lu";
 import { Input, Button } from "../components/index";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { login } from "../apis/auth";
 import { useDispatch } from "react-redux";

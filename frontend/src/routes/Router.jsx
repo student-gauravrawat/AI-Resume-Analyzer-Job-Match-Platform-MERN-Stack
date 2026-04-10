@@ -4,32 +4,15 @@ import MainLayout from "./MainLayout";
 import PublicRoute from "./PublicRoute"
 import ProtectedRoute from "./ProtectedRoute";
 import App from "../App";
+import {LandingPage} from "../pages/index.js"
 
 
-const router = createBrowserRouter([
+const router = createBrowserRouter([ 
     {
-       path: "/login",
-       element: <PublicRoute>
-                  <Login/>
-                </PublicRoute>
-    }, 
-    {
-       path: "/ui",
-       element:   <App/>
+       path: "/",
+       element:   <LandingPage/>
                
     }, 
-    {
-        path:"/register",
-        element: <PublicRoute>
-                     <Register/>
-                 </PublicRoute>
-    },
-    {
-        path: "/email-verify",
-        element: <PublicRoute>
-                     <EmailVerify/>
-                 </PublicRoute>
-    },
     {
         path: "/",
         element: (
