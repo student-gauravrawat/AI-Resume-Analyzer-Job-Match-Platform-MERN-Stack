@@ -37,7 +37,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex content-center items-center lg:gap-[45%] w-full fixed mb-20 bg-[#181920CC] mx-auto">
+    <nav className="flex content-center items-center lg:gap-[30%] w-full fixed mb-20 bg-[#181920CC] mx-auto">
       <section className="flex content-center items-center gap-20">
         {/* logo with name */}
         <div className=" flex content-center items-center w-full">
@@ -76,7 +76,7 @@ function Navbar() {
       </section>
 
       {/* Button Section */}
-      <section className=" flex content-center items-center gap-7 ">
+      <section className=" flex content-center items-center gap-7 mr-4">
         <button
           className="text-[#BEC0CAFF] cursor-pointer text-lg"
            onClick={openLogin}
