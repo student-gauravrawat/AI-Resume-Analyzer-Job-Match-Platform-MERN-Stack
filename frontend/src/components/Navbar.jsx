@@ -104,7 +104,7 @@ function Navbar() {
         open={activeModal === "register"}
         onClose={closeAll}
         openLogin={openLogin}
-        onSucess={(email) => openVerify(email)}
+        onSuccess={(email) => openVerify(email)}
       />
 
       <EmailVerify

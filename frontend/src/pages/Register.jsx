@@ -59,7 +59,7 @@ function Register({ open, openLogin, onClose, onSuccess }) {
             <IoDocumentTextOutline size={32} />
           </div>
 
-          <div className="text-center mb-10">
+          <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-black">
               Create Your Account
             </h1>
