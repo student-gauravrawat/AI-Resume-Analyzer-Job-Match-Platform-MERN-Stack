@@ -1,5 +1,5 @@
 import {createBrowserRouter} from "react-router-dom"
-import {Register, EmailVerify, Login, MyResume, JobMatch, History, ChangePassword, AnalyzeResult, Profile} from "../pages/index"
+import {MyResume, JobMatch, History, ChangePassword, AnalyzeResult, Profile} from "../pages/index"
 import MainLayout from "./MainLayout";
 import PublicRoute from "./PublicRoute"
 import ProtectedRoute from "./ProtectedRoute";
@@ -9,7 +9,10 @@ import {LandingPage} from "../pages/index.js"
 const router = createBrowserRouter([ 
     {
        path: "/",
-       element:   <LandingPage/>
+       element:   
+        <PublicRoute>
+            <LandingPage/>
+        </PublicRoute>
                
     }, 
     {
