@@ -6,7 +6,7 @@ function ProtectedRoute({ children }){
  const location = useLocation();
 
  if(!user){
-    return <Navigate to="/login" replace state={{Form: location}}/>
+    return <Navigate to="/mainpage" replace state={{Form: location}}/>
  }
     return children;
 

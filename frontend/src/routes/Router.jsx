@@ -8,7 +8,7 @@ import {LandingPage} from "../pages/index.js"
 
 const router = createBrowserRouter([ 
     {
-       path: "/",
+       path: "/mainpage",
        element:   
         <PublicRoute>
             <LandingPage/>
