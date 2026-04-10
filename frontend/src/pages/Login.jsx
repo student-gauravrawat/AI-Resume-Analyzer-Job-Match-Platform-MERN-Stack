@@ -53,7 +53,7 @@ function Login({ open, openRegister, onClose, openVerify }) {
         rounded-4xl 
         shadow-2xl 
         left-[38%]
-        top-50
+        top-40
         overflow-hidden 
         "
       >

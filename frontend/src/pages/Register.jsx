@@ -42,7 +42,7 @@ function Register({ open, openLogin, onClose, onSuccess }) {
         rounded-4xl 
         shadow-2xl 
         left-[35%]
-        top-28
+        top-20
         overflow-hidden "
       >
         {/* Main Transparent Card */}
