@@ -25,40 +25,38 @@ function Navbar() {
 
   const openLogin = () => setActiveModal("login");
   const openRegister = () => setActiveModal("register");
-  
+
   const openVerify = (email = "") => {
-    if (email) setUserEmail(email); 
+    if (email) setUserEmail(email);
     setActiveModal("verify");
   };
 
   const closeAll = () => {
     setActiveModal(null);
-    setUserEmail(""); 
+    setUserEmail("");
   };
 
   return (
-    <nav className="flex content-center items-center lg:gap-[30%] w-full fixed mb-20 bg-[#181920CC] mx-auto">
-      <section className="flex content-center items-center gap-20">
-        {/* logo with name */}
-        <div className=" flex content-center items-center w-full">
+    <nav className="flex items-center justify-between w-full fixed top-0 left-0 z-50 bg-[#181920CC] backdrop-blur-sm px-6 py-3 shadow-md">
+      {/* Left Section - Logo + Links */}
+      <div className="flex items-center gap-9">
+        {/* Logo */}
+        <div className="flex items-center">
           <img
             src="/logo.png"
             alt="web_logo"
-            className="w-22 h-22 rounded-full mr-2 mt-2"
+            className="w-15 h-15 rounded-full mr-2 mt-2"
           />
-          <h1 className=" text-[#798BE7FF] text-[20px] font-bold">
+          <h1 className="text-[#798BE7FF] text-lg md:text-xl font-bold whitespace-nowrap">
             AI Resume Analyzer
           </h1>
         </div>
 
-        {/* Links */}
-        <div>
-          <ul className=" flex justify-center items-center gap-6 w-full">
+        {/* Navigation Links - Desktop only */}
+        <div className="hidden md:block">
+          <ul className="flex items-center gap-6">
             {lists.map((item) => (
-              <li
-                className=" text-[#BEC0CAFF] text-md cursor-pointer font-semibold"
-                key={item.no}
-              >
+              <li key={item.no}>
                 <Link
                   activeClass="text-blue-500 font-bold"
                   spy={true}
@@ -66,6 +64,7 @@ function Navbar() {
                   offset={-98}
                   smooth={true}
                   duration={500}
+                  className="text-[#BEC0CAFF] text-md cursor-pointer font-semibold hover:text-white transition-colors"
                 >
                   {item.title}
                 </Link>
@@ -73,46 +72,48 @@ function Navbar() {
             ))}
           </ul>
         </div>
-      </section>
+      </div>
 
-      {/* Button Section */}
-      <section className=" flex content-center items-center gap-7 mr-4">
+      {/* Right Section - Buttons */}
+      <div className="flex items-center gap-4">
         <button
-          className="text-[#BEC0CAFF] cursor-pointer text-lg"
-           onClick={openLogin}
+          className="text-[#BEC0CAFF] cursor-pointer text-md font-medium hover:text-white transition-colors"
+          onClick={openLogin}
         >
           Login
         </button>
         <button
-          className=" bg-[#798BE7FF] hover:bg-[#aeb7e6] text-[#181920FF] font-semibold w-30 h-10 cursor-pointer rounded-lg"
+          className="bg-[#798BE7FF] hover:bg-[#6575c9] text-[#181920FF] font-semibold px-5 py-2 cursor-pointer rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
           onClick={openRegister}
         >
           Sign Up Free
         </button>
-      </section>
+      </div>
 
-      <Login 
-        open={activeModal === "login"} 
-        onClose={closeAll} 
-        openRegister={openRegister} 
-        openVerify={()=> openVerify()}
-        />
+      {/* Mobile Menu Button - Optional */}
+      <button className="md:hidden text-white text-2xl">☰</button>
 
-      <Register 
-         open={activeModal === "register"} 
-         onClose={closeAll}
-         openLogin={openLogin} 
-         onSucess={(email)=> openVerify(email)}
-         />
-
-       <EmailVerify 
-        open={activeModal === "verify"} 
-        email={userEmail} 
-        onClose={closeAll} 
-        onOpenLogin={openLogin} 
-        onOpenRegister={openRegister}
+      <Login
+        open={activeModal === "login"}
+        onClose={closeAll}
+        openRegister={openRegister}
+        openVerify={() => openVerify()}
       />
 
+      <Register
+        open={activeModal === "register"}
+        onClose={closeAll}
+        openLogin={openLogin}
+        onSucess={(email) => openVerify(email)}
+      />
+
+      <EmailVerify
+        open={activeModal === "verify"}
+        email={userEmail}
+        onClose={closeAll}
+        onOpenLogin={openLogin}
+        onOpenRegister={openRegister}
+      />
     </nav>
   );
 }
